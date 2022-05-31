@@ -1,10 +1,18 @@
 import "./App.css";
-import getImages from "./hooks/getImages";
+import GetImages from "./hooks/GetImages";
+import Settings from "./components/settings/Settings";
 
 const App = () => {
-  getImages();
-  
-  return <h1>hello</h1>;
+  const images = GetImages();
+
+  console.log({ images })
+
+  return (
+    <div>
+      <h1>Memory Game</h1>
+      <Settings />
+    </div>
+  );
 };
 
 export default App;

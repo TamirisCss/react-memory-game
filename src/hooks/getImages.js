@@ -1,8 +1,10 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const getRandomPage = () => Math.round(Math.random() * (10 - 1) + 1);
 
-const getImages = () => {
+const GetImages = () => {
+  const [images, setImages] = useState([]);
+
   const buildUrl = () => {
     let url = new URL("https://api.pexels.com/v1/search");
 
@@ -23,12 +25,14 @@ const getImages = () => {
       },
     })
       .then((data) => data.json())
-      .then((data) => console.log(data.photos));
+      .then((data) => setImages(data.photos));
   };
 
   useEffect(() => {
     fecthPics();
   }, []);
+
+  return images;
 };
 
-export default getImages;
+export default GetImages;
