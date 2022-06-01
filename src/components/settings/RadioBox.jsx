@@ -1,5 +1,5 @@
-const RadioBox = ({item, category, onChange}) => {
-    const isChecked = item === category;
+const RadioBox = ({item, isChecked, onChange}) => {
+    
 
   return (
     <div>
