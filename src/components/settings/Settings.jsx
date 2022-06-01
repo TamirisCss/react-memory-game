@@ -1,10 +1,13 @@
 import { useState } from "react";
-import { CATEGORIES, LEVEL } from "../../constants";
+import { CATEGORIES, LEVEL, CARDS_COUNT } from "../../constants";
+
 import RadioBox from "./RadioBox";
+import CardCounter from "./CardCounter";
 
 const Settings = () => {
   const [selectCategory, setSelectCategory] = useState(CATEGORIES[0]);
   const [selectLevel, setSelectLevel] = useState(LEVEL[0]);
+  const [selectCardsCounter, setSelectCardsCounter] = useState(CARDS_COUNT);
 
   return (
     <div>
@@ -31,6 +34,14 @@ const Settings = () => {
           />
         ))}
       </div>
+      <h4>Number of cards:</h4>
+      <div>
+        <CardCounter
+          selectCardsCounter={selectCardsCounter}
+          onClick={setSelectCardsCounter}
+        />
+      </div>
+      <button>Play Game</button>
     </div>
   );
 };
