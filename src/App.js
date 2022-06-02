@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="background-content">
       <Background />
-      <h1>Memory Game</h1>
+      <h1 className='title'>Memory Game</h1>
       <Settings />
     </div>
   );
