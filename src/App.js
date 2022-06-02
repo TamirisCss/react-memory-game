@@ -1,4 +1,5 @@
-import "./App.css";
+import './components/background/background.css';
+import Background from './components/background/Background';
 import GetImages from "./hooks/GetImages";
 import Settings from "./components/settings/Settings";
 
@@ -8,7 +9,8 @@ const App = () => {
   console.log({ images })
 
   return (
-    <div>
+    <div className="background-content">
+      <Background />
       <h1>Memory Game</h1>
       <Settings />
     </div>
