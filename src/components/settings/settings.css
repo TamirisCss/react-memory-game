@@ -23,3 +23,9 @@
     align-items: center;
     gap: 1rem;
 }
+
+@media screen and (max-width: 445px) {
+    .settings {
+        width: 320px;
+    }
+}
