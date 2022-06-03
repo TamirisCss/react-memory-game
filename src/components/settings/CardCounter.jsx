@@ -15,9 +15,13 @@ const CardCounter = ({ selectCardsCounter, onClick }) => {
 
   return (
     <>
-      <button onClick={decreaseCards}>-</button>
+      <button className="couterBtn" onClick={decreaseCards}>
+        -
+      </button>
       <div>{selectCardsCounter}</div>
-      <button onClick={increaseCards}>+</button>
+      <button className="couterBtn" onClick={increaseCards}>
+        +
+      </button>
     </>
   );
 };
