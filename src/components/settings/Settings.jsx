@@ -44,7 +44,7 @@ const Settings = () => {
             onClick={setSelectCardsCounter}
           />
         </div>
-        <button>Play Game</button>
+        <button className="btn">Play Game</button>
       </div>
     </div>
   );

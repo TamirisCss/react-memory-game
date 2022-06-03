@@ -1,31 +1,72 @@
 .settings-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
 }
 
 .settings {
-    width: 350px;
-    padding: 1rem;
-    background-color: rgba(240, 248, 255, 0.32);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  width: 400px;
+  padding: 1rem;
+  background-color: rgba(240, 248, 255, 0.32);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .settings h2 {
-    margin-bottom: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  color: #975df4da;
+}
+
+.settings h4 {
+  margin-bottom: 0.4rem;
+  color: #3c7dffcf;
 }
 
 .settings-items {
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  color: #975df4da;
+  gap: 1rem;
+}
+
+.settings-items label,
+input {
+  cursor: pointer;
+}
+
+.couterBtn {
+  padding: 4px 8px;
+  background: linear-gradient(to right, #3c7dffcf, #975df4da);
+}
+
+.couterBtn,
+.btn {
+  color: #fff;
+  border: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 6px 9px;
+  margin-top: 1rem;
+  background: linear-gradient(to right, #3c7dffcf, #975df4da, #fb45e9c5);
+  transition: all 0.5s ease;
+}
+
+.btn:hover {
+  background: linear-gradient(to left, #3c7dffcf, #975df4da, #fb45e9c5);
 }
 
 @media screen and (max-width: 445px) {
-    .settings {
-        width: 320px;
-    }
+  .settings {
+    width: 320px;
+  }
 }
