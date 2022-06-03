@@ -1,6 +1,6 @@
 const RadioBox = ({ item, isChecked, onChange }) => {
   return (
-    <div>
+    <div className="input-container">
       <input
         type="radio"
         name={item}

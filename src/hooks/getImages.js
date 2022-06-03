@@ -21,7 +21,7 @@ const GetImages = () => {
   const fecthPics = () => {
     fetch(buildUrl(), {
       headers: {
-        Authorization: process.env.REACT_APP_AUTH_KEY,
+        Authorization: process.env.PEXEL_API_KEY,
       },
     })
       .then((data) => data.json())
