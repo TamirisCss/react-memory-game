@@ -6,10 +6,14 @@ import CardCounter from "./CardCounter";
 
 import "./settings.css";
 
-const Settings = () => {
+const Settings = ({startGame}) => {
   const [selectCategory, setSelectCategory] = useState(CATEGORIES[0]);
   const [selectLevel, setSelectLevel] = useState(LEVEL[0]);
   const [selectCardsCounter, setSelectCardsCounter] = useState(CARDS_COUNT);
+
+  const startPlayGame = () => {
+    startGame({selectCategory, selectLevel, selectCardsCounter});
+  };
 
   return (
     <div className="settings-container">
@@ -44,7 +48,7 @@ const Settings = () => {
             onClick={setSelectCardsCounter}
           />
         </div>
-        <button className="btn">Play Game</button>
+        <button className="btn" onClick={startPlayGame}>Play Game</button>
       </div>
     </div>
   );
