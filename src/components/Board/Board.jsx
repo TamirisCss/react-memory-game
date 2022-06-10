@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import useImages from "../../hooks/useImages";
-//import GameLogic from "../../hooks/GameLogic";
 import Card from "./Card";
 
+import "./board.css";
+
 const Board = ({ settingsOptions }) => {
-  const [loading, setLoading] = useState(false);
+  //   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState([]);
   const images = useImages(settingsOptions);
 
@@ -32,6 +33,7 @@ const Board = ({ settingsOptions }) => {
         };
         cards.push(cardFront, cardBack);
       });
+
       return shuffleArray(cards);
     };
 
@@ -44,8 +46,8 @@ const Board = ({ settingsOptions }) => {
 
   return (
     <div>
-      {loading && <p>Loading...</p>}
-      <div>
+      {/* {loading && <p>Loading...</p>} */}
+      <div className="BoardContainer">
         {cards.map((card) => (
           <Card key={card.id} card={card} />
         ))}
