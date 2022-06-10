@@ -1,15 +1,57 @@
 import React, { useEffect, useState } from "react";
-import GetImages from "./../../hooks/GetImages";
+import useImages from "../../hooks/useImages";
+//import GameLogic from "../../hooks/GameLogic";
+import Card from "./Card";
 
 const Board = ({ settingsOptions }) => {
-  const [loading, setLoading] = useState(true);
-  const images = GetImages(settingsOptions);
+  const [loading, setLoading] = useState(false);
+  const [cards, setCards] = useState([]);
+  const images = useImages(settingsOptions);
+
+  const shuffleArray = (array) => {
+    for (var i = array.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
+  };
 
   useEffect(() => {
-    if (images.length > 0) setLoading(false);
+    const GameLogic = (images) => {
+      let cards = [];
+      images.forEach((image) => {
+        const cardFront = {
+          id: image.id + "/front",
+          url: image.src.small,
+        };
+        const cardBack = {
+          id: image.id + "/back",
+          url: image.src.small,
+        };
+        cards.push(cardFront, cardBack);
+      });
+      return shuffleArray(cards);
+    };
+
+    if (images) {
+      setCards(GameLogic(images));
+    }
   }, [images]);
 
-  return <div>{loading && <p>Loading...</p>}</div>;
+  console.log(cards);
+
+  return (
+    <div>
+      {loading && <p>Loading...</p>}
+      <div>
+        {cards.map((card) => (
+          <Card key={card.id} card={card} />
+        ))}
+      </div>
+    </div>
+  );
 };
 
 export default Board;

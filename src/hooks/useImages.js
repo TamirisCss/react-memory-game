@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const getRandomPage = () => Math.round(Math.random() * (10 - 1) + 1);
 
-const GetImages = (settingsOptions) => {
+const useImages = (settingsOptions) => {
   const [images, setImages] = useState([]);
 
   const buildUrl = () => {
@@ -37,4 +37,4 @@ const GetImages = (settingsOptions) => {
   return images;
 };
 
-export default GetImages;
+export default useImages;
